@@ -13,4 +13,7 @@ export const MONTHS = {
   12: "décembre",
 };
 
-export const getMonth = (date) => MONTHS[date.getMonth()];
+export const getMonth = (date) =>
+  new Date(date).toLocaleDateString("fr-FR", {
+    month: "long",
+  });

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useData } from "../../contexts/DataContext";
 
 import "./style.scss";
+import { getMonth } from "../../helpers/Date";
 
 const Slider = () => {
   const { data } = useData();
@@ -35,11 +36,7 @@ const Slider = () => {
               <div className="SlideCard__description">
                 <h3>{event.title}</h3>
                 <p>{event.description}</p>
-                <div>
-                  {new Date(event.date).toLocaleDateString("fr-FR", {
-                    month: "long",
-                  })}
-                </div>
+                <div>{getMonth(event.date)}</div>
               </div>
             </div>
           </div>

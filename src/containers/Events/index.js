@@ -36,7 +36,6 @@ const EventList = () => {
 
   const pageNumber = Math.floor((filteredEvents?.length || 0) / PER_PAGE) + 1;
   const typeList = new Set(data?.events.map((event) => event.type));
-  console.log(typeList);
 
   return (
     <>

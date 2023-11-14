@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 
 import "./style.scss";
+import { getMonth } from "../../helpers/Date";
 
 const EventCard = ({
   imageSrc,
@@ -22,11 +23,7 @@ const EventCard = ({
     </div>
     <div className="EventCard__descriptionContainer">
       <div className="EventCard__title">{title}</div>
-      <div className="EventCard__month">
-        {new Date(date).toLocaleDateString("fr-FR", {
-          month: "long",
-        })}
-      </div>
+      <div className="EventCard__month">{getMonth(date)}</div>
     </div>
   </div>
 );
